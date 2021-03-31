@@ -9,7 +9,8 @@
 add_library(TSCclibc STATIC
   libc.c process.c)
 target_include_directories(TSCclibc PUBLIC
-  include)
+  include
+  ${SQLite3_INCLUDE_DIRS})
 
 if(NOT BUILD_SHARED_LIBS)
   install(TARGETS TSCclibc
